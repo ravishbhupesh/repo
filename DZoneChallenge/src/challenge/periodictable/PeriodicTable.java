@@ -9,14 +9,6 @@ package challenge.periodictable;
  */
 public class PeriodicTable {
 
-	public static void main(String[] args) {
-		PeriodicTable challenge = new PeriodicTable();
-		String elementName = "Spenglerium";
-		String symbol = "Ee";
-		System.out.println("Is " + symbol + " valid for the " + elementName + " ? :"
-				+ challenge.isValidSymbolForElement(elementName, symbol));
-	}
-
 	public boolean isValidSymbolForElement(String elementName, String symbol) {
 
 		// 1. All chemical symbols must be exactly two letters
