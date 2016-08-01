@@ -1,17 +1,26 @@
 /**
  * 
  */
-package challenge.periodictable;
+package com.splurth.table.util;
+
+import com.splurth.table.ChemicalElement;
+import com.splurth.table.PeriodicTable;
 
 /**
  * @author RavishB
+ * 
+ *         A Utility class for {@link PeriodicTable}.
  *
  */
-public class PeriodicTable {
+public class PeriodicTableUtil {
 
-	public boolean isValidSymbolForElement(String elementName, String symbol) {
+	public boolean doesElementHaveAValidSymbol(ChemicalElement element) {
+
+		String elementName = element.getElementName();
+		String symbol = element.getSymbol();
 
 		// 1. All chemical symbols must be exactly two letters
+		// Element name should not be null or of length 0
 		if (symbol == null || (symbol != null && symbol.length() != 2)
 				|| (elementName != null && elementName.length() < 1)) {
 			return false;

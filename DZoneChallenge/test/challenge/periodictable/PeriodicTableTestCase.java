@@ -6,13 +6,16 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.splurth.table.ChemicalElement;
+import com.splurth.table.util.PeriodicTableUtil;
+
 public class PeriodicTableTestCase {
 
-	private PeriodicTable pTable;
+	private PeriodicTableUtil pTable;
 
 	@Before
 	public void setUp() throws Exception {
-		pTable = new PeriodicTable();
+		pTable = new PeriodicTableUtil();
 	}
 
 	@After
@@ -21,33 +24,32 @@ public class PeriodicTableTestCase {
 	}
 
 	@Test
-	public void testSpengleriumForEe() {
-		assertTrue(pTable.isValidSymbolForElement("Spenglerium", "Ee"));
+	public void testPeriodicTableForElementsWithValidSymbols() {
+		assertTrue(pTable.doesElementHaveAValidSymbol(new ChemicalElement("Spenglerium", "Ee")));
 	}
 
 	@Test
 	public void testZeddemoriumForZr() {
-		assertTrue(pTable.isValidSymbolForElement("Zeddemorium", "Zr"));
+		assertTrue(pTable.doesElementHaveAValidSymbol(new ChemicalElement("Zeddemorium", "Zr")));
 	}
 
 	@Test
 	public void testVenkmineForKn() {
-		assertTrue(pTable.isValidSymbolForElement("Venkmine", "Kn"));
+		assertTrue(pTable.doesElementHaveAValidSymbol(new ChemicalElement("Venkmine", "Kn")));
 	}
 
 	@Test
 	public void testStantzonForZt() {
-		assertTrue(!pTable.isValidSymbolForElement("Stantzon", "Zt"));
+		assertTrue(!pTable.doesElementHaveAValidSymbol(new ChemicalElement("Stantzon", "Zt")));
 	}
 
 	@Test
 	public void testMelintzumForNn() {
-		assertTrue(!pTable.isValidSymbolForElement("Melintzum", "Nn"));
+		assertTrue(!pTable.doesElementHaveAValidSymbol(new ChemicalElement("Melintzum", "Nn")));
 	}
 
 	@Test
 	public void testTulliumForTy() {
-		assertTrue(!pTable.isValidSymbolForElement("Tullium", "Ty"));
+		assertTrue(!pTable.doesElementHaveAValidSymbol(new ChemicalElement("Tullium", "Ty")));
 	}
-
 }
