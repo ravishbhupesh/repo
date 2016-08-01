@@ -1,4 +1,4 @@
-package challenge.periodictable;
+package com.splurth.table;
 
 import static org.junit.Assert.assertTrue;
 
