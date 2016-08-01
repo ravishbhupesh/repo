@@ -4,6 +4,11 @@
 package com.splurth.table;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.splurth.table.util.DefaultSymbolValiditor;
+import com.splurth.table.util.SymbolValiditor;
 
 /**
  * @author RavishB
@@ -25,6 +30,8 @@ public class ChemicalElement implements Serializable {
 	 * Symbolic representation of the element.
 	 */
 	private String symbol;
+	private List<String> symbols = new ArrayList<String>();
+	SymbolValiditor defaultSymbolValiditor = new DefaultSymbolValiditor();
 
 	public ChemicalElement(String elementName, String symbol) {
 		this.elementName = elementName;
@@ -55,5 +62,18 @@ public class ChemicalElement implements Serializable {
 		sb.append("Symbol : " + this.symbol);
 		sb.append(" ]");
 		return sb.toString();
+	}
+
+	public List<String> getSymbols() {
+		return symbols;
+	}
+
+	public void addSymbolToList(String symbol) {
+		ChemicalElement ce = new ChemicalElement(this.elementName, symbol);
+		if (defaultSymbolValiditor.doesElementHaveAValidSymbol(ce)) {
+			this.symbols.add(symbol);
+		} else {
+			System.out.println("Invalid symbol " + symbol + " for element " + ce.toString());
+		}
 	}
 }
