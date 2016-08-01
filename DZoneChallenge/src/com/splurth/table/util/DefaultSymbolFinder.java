@@ -3,8 +3,8 @@
  */
 package com.splurth.table.util;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.splurth.table.ChemicalElement;
 
@@ -21,7 +21,7 @@ public class DefaultSymbolFinder implements SymbolFinder {
 	 * splurth.table.ChemicalElement)
 	 */
 	public Set<String> findValidSymbolsForElement(ChemicalElement element) {
-		Set<String> symbols = new LinkedHashSet<>();
+		Set<String> symbols = new TreeSet<>();
 		String elementName = element.getElementName();
 		for (int i = 0; i < elementName.length(); i++) {
 			for (int j = i + 1; j < elementName.length(); j++) {
