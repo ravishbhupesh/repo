@@ -4,15 +4,15 @@
 package com.splurth.table.util;
 
 import com.splurth.table.ChemicalElement;
-import com.splurth.table.PeriodicTable;
 
 /**
  * @author RavishB
  * 
- *         A Utility class for {@link PeriodicTable}.
+ *         A Default implementation for validity of {@link ChemicalElement}
+ *         Symbol validity.
  *
  */
-public class PeriodicTableUtil {
+public class DefaultSymbolValiditor implements SymbolValiditor {
 
 	public boolean doesElementHaveAValidSymbol(ChemicalElement element) {
 

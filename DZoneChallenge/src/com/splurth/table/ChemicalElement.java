@@ -17,7 +17,13 @@ public class ChemicalElement implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -335041580744259112L;
+	/**
+	 * Name of the Chemical Element
+	 */
 	private String elementName;
+	/**
+	 * Symbolic representation of the element.
+	 */
 	private String symbol;
 
 	public ChemicalElement(String elementName, String symbol) {

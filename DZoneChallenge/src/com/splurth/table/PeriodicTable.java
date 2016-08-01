@@ -7,7 +7,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.splurth.table.util.PeriodicTableUtil;
+import com.splurth.table.util.DefaultSymbolValiditor;
+import com.splurth.table.util.SymbolValiditor;
 
 /**
  * @author RavishB
@@ -21,10 +22,11 @@ public class PeriodicTable implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 5009802797632750622L;
+
 	private String tableName;
 	private List<ChemicalElement> elements = new ArrayList<>();
 	private List<ChemicalElement> invalidElements = new ArrayList<>();
-	private final PeriodicTableUtil util = new PeriodicTableUtil();
+	private final SymbolValiditor symbolValiditor = new DefaultSymbolValiditor();
 
 	public PeriodicTable(String tableName) {
 		this.tableName = tableName;
@@ -52,7 +54,7 @@ public class PeriodicTable implements Serializable {
 	 * @param element
 	 */
 	public void addNewElement(ChemicalElement element) {
-		if (util.doesElementHaveAValidSymbol(element)) {
+		if (symbolValiditor.doesElementHaveAValidSymbol(element)) {
 			this.elements.add(element);
 		} else {
 			this.invalidElements.add(element);
