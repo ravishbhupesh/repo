@@ -41,11 +41,4 @@ public class DefaultSymbolFinder implements SymbolFinder {
 		return symbols;
 	}
 
-	public static void main(String[] args) {
-		SymbolFinder sf = new DefaultSymbolFinder();
-		Set<String> symbols = sf.findValidSymbolsForElement(new ChemicalElement("Zuulon", null));
-		System.out.println(symbols);
-		System.out.println(symbols.size());
-	}
-
 }
