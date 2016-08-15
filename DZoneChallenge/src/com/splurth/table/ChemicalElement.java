@@ -31,7 +31,7 @@ public class ChemicalElement implements Serializable {
 	 */
 	private String symbol;
 	private List<String> symbols = new ArrayList<String>();
-	SymbolValiditor defaultSymbolValiditor = new DefaultSymbolValiditor();
+	private final SymbolValiditor defaultSymbolValiditor = new DefaultSymbolValiditor();
 
 	public ChemicalElement(String elementName, String symbol) {
 		this.elementName = elementName;
