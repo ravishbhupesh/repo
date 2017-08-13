@@ -49,13 +49,10 @@ public class JSONExample {
 		Iterator<Object> itr = DB.iterator();
 		while (itr.hasNext()) {
 			JSONObject o = (JSONObject) itr.next(); // fetch parent object
-			JSONObject addrObj = (JSONObject) o.get("address"); // fetch the
-																// Address
-																// Objects from
-																// parent object
-			if (city.equals(addrObj.get("city"))) { // fetch city from the
-													// address object & compare
-													// with input city
+			// fetch the Address Objects from parent object
+			JSONObject addrObj = (JSONObject) o.get("address"); 
+			// fetch city from the address object & compare with input city
+			if (city.equals(addrObj.get("city"))) { 
 				response.put(o);
 			}
 		}
@@ -74,15 +71,11 @@ public class JSONExample {
 		Iterator<Object> itr = DB.iterator();
 		while (itr.hasNext()) {
 			JSONObject o = (JSONObject) itr.next(); // fetch parent object
-			JSONObject addrObj = (JSONObject) o.get("address"); // fetch the
-																// Address
-																// Objects from
-																// parent object
+			// fetch the Address Objects from parent object
+			JSONObject addrObj = (JSONObject) o.get("address"); 
 			String pc = addrObj.getString("postalcode");
-			if (null != pc && pc.startsWith(postalCode)) { // fetch city from
-															// the address
-															// object & compare
-															// with input city
+			// fetch city from the address object & compare with input city
+			if (null != pc && pc.startsWith(postalCode)) { 
 				response.put(o);
 			}
 		}
